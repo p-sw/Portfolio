@@ -3,6 +3,7 @@
 <html lang="kr">
     <head>
         {% include 'macro/head.html' %}
+        <script src="{% static 'app/js/hangul.js' %}"></script>
         <link href="{% static 'app/css/home.css' %}" rel="stylesheet">
     </head>
     <body>
@@ -14,7 +15,8 @@
         </main>
         <script src="{% static 'app/js/index.js' %}"></script>
         <script>
-            welcome_text.write();
+            welcome_text.get_index();
+            welcome_text.start();
         </script>
     </body>
 </html>
