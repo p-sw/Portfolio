@@ -41,6 +41,7 @@
 
     background-color: var(--nav-popup-color);
     color: var(--nav-icon-hover-color);
+    font-family: 'Pretendard Std Variable';
 
     border: 1px solid var(--nav-icon-hover-color);
     border-radius: 5px;
