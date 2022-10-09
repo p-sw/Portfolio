@@ -1,3 +1,6 @@
 header#welcome-title {
     color: var(--index-welcome-title-color);
+
+    font-family: 'Pretendard Std Variable';
+    font-size: 2.5rem;
 }
