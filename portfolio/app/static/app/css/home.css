@@ -28,6 +28,8 @@ a.button {
     text-decoration: none;
 
     cursor: pointer;
+
+    opacity: 0;
 }
 
 a.button img.icon {
@@ -47,6 +49,11 @@ a.button.main {
 a.button.sub {
     border: var(--a-sub-button-border);
     color: var(--a-sub-button-color);
+}
+
+a.button.visible {
+    opacity: 1;
+    transition: 2s;
 }
 
 nav.sub-nav {
