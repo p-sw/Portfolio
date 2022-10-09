@@ -3,16 +3,21 @@
 
     /*** Global Colors ***/
     --highlighted-color: #00ccff;
+    --secondary-color: #85F9BD;
 
     --background-color: #151515;
 
     /*** <a> Button Colors ***/
     --a-button-background-color: var(--background-color);
     
+    --a-main-button-border-color: var(--highlighted-color);
+    --a-sub-button-border-color: var(--secondary-color);
     --a-main-button-border: 1px solid var(--highlighted-color);
-    --a-main-button-color: var(--highlighted-color);
-    --a-sub-button-border: 1px solid #cfcfcf;
-    --a-sub-button-color: #cfcfcf;
+    --a-sub-button-border: 1px solid var(--secondary-color);
+
+    --a-button-color: #cfcfcf;
+
+    --a-button-hover-transition-speed: 0.3s;
 
     /*** Nav Colors ***/
     --nav-container-bg-color: var(--background-color);

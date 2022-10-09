@@ -31,6 +31,16 @@ a.button {
     cursor: pointer;
 
     opacity: 0;
+
+    animation-play-state: paused;
+    animation-name: visibleAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+a.button.visible {
+    animation-play-state: running;
 }
 
 a.button img.icon {
@@ -44,17 +54,35 @@ a.button img.icon {
 
 a.button.main {
     border: var(--a-main-button-border);
-    color: var(--a-main-button-color);
+    color: var(--a-button-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+a.button.main:hover {
+    background-color: var(--a-main-button-border-color);
+    color: var(--a-button-background-color);
+    transition: var(--a-button-hover-transition-speed);
 }
 
 a.button.sub {
     border: var(--a-sub-button-border);
-    color: var(--a-sub-button-color);
+    color: var(--a-button-color);
+    transition: var(--a-button-hover-transition-speed);
 }
 
-a.button.visible {
-    opacity: 1;
-    transition: 2s;
+a.button.sub:hover {
+    background-color: var(--a-sub-button-border-color);
+    color: var(--a-button-background-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+@keyframes visibleAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 nav.sub-nav {
