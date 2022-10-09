@@ -1,3 +1,13 @@
+main {
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 50px;
+}
+
 header#welcome-title {
     color: var(--index-welcome-title-color);
 
