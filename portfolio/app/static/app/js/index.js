@@ -15,8 +15,8 @@ welcome_text = {
 
     speed: 50,
     special_speeds: {
-        " ": 150,
-        "\n": 200,
+        " ": 120,
+        "\n": 160,
     },
 
     start: function() {
