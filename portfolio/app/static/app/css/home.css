@@ -14,3 +14,45 @@ header#welcome-title {
     font-family: 'Pretendard Std Variable';
     font-size: 2.5rem;
 }
+
+a.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    background-color: var(--a-button-background-color);
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+a.button img.icon {
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+
+    width: 20px;
+    height: 20px;
+}
+
+a.button.main {
+    border: var(--a-main-button-border);
+    color: var(--a-main-button-color);
+}
+
+a.button.sub {
+    border: var(--a-sub-button-border);
+    color: var(--a-sub-button-color);
+}
+
+nav.sub-nav {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 20px;
+    gap: 10px;
+}

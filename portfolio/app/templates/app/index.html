@@ -9,9 +9,17 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            <header id="welcome-title">
-
-            </header>
+            <header id="welcome-title"></header>
+            <nav class="sub-nav">
+                <a class="main button" href="https://github.com/sserve-kr">
+                    <img class="icon" src="{% static 'app/img/github.png' %}">
+                    깃허브 둘러보기
+                </a>
+                <a class="sub button">
+                    <img class="icon" src="{% static 'app/img/blog.png' %}">
+                    블로그 바로가기
+                </a>
+            </nav>
         </main>
         <script src="{% static 'app/js/index.js' %}"></script>
         <script>

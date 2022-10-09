@@ -1,10 +1,24 @@
 :root {
+    /***** Colors *****/
+
+    /*** Global Colors ***/
+    --highlighted-color: #00ccff;
+
     --background-color: #151515;
 
+    /*** <a> Button Colors ***/
+    --a-button-background-color: var(--background-color);
+    
+    --a-main-button-border: 1px solid var(--highlighted-color);
+    --a-main-button-color: var(--highlighted-color);
+    --a-sub-button-border: 1px solid #cfcfcf;
+    --a-sub-button-color: #cfcfcf;
+
+    /*** Nav Colors ***/
     --nav-container-bg-color: var(--background-color);
     --nav-bg-color: #0f0f0f;
     --nav-icon-color: #2f2f2f;
-    --nav-icon-hover-color: #00ccff;
+    --nav-icon-hover-color: var(--highlighted-color);
     --nav-popup-color: #1f1f1f;
 
     --index-welcome-title-color: #ffffff;
