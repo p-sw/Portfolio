@@ -26,7 +26,10 @@
     --nav-icon-hover-color: var(--highlighted-color);
     --nav-popup-color: #1f1f1f;
 
+    /*** Index Page Colors ***/
     --index-welcome-title-color: #ffffff;
+
+    /*** About Page Colors ***/
 }
 
 html {
