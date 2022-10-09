@@ -8,7 +8,21 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            
+            <section class="profile box">
+                <article class="imgs">
+                    <div class="back-img" data-src="{% static 'app/imgs/about/profile-background.jpg' %}" style="--alt-back-color: transparent;">
+                        <img src="{% static 'app/img/profile.png' %}" data-alt="rgba(255,255,255,1)" style="--alt-back-color: rgba(50, 50, 50, 1);">
+                    </div>
+                </article>
+            </section>
+            <section class="panels box">
+                <article class="panel box" id="git-commits">
+
+                </article>
+                <article class="panel box" id="project-summary">
+
+                </article>
+            </section>
         </main>
     </body>
 </html>
