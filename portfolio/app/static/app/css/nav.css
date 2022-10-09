@@ -36,7 +36,10 @@
     align-items: center;
 }
 
-.main-nav .wrapper a:hover::after {
+.main-nav .wrapper a::after {
+    opacity: 0;
+    transition: 0.2s;
+
     content: attr(data-title);
 
     background-color: var(--nav-popup-color);
@@ -50,6 +53,11 @@
     
     position: absolute;
     left: 45px;
+}
+
+.main-nav .wrapper a:hover::after {
+    opacity: 1;
+    transition: 0.2s;
 }
 
 .main-nav .wrapper a svg {
