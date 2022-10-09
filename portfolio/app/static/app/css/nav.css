@@ -1,4 +1,6 @@
 .main-nav {
+    z-index: 2;
+
     background-color: var(--nav-container-bg-color);
 
     display: flex;
