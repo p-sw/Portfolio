@@ -8,7 +8,30 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            
+            <section class="projects">
+                {% for project in projects %}
+                <article class="project">
+                    <header>
+                        <h2>{{ project.title }}</h2>
+                        {% if project.finished %}
+                        <span class="finished">이 프로젝트는 종료되었습니다.</span>
+                        {% else %}
+                        <span class="not finished">이 프로젝트는 진행중입니다.</span>
+                        {% endif %}
+                        <p>{{ project.short_description }}</p>
+                    </header>
+                    <div class="metadata">
+                        <span class="start date">{{ project.start_commit|date:'Y-m-d' }}</span>
+                        <span class="last date">{{ project.last_commit|date:'Y-m-d' }}</span>
+                        <div class="dependencies">
+                            {% for dependency in project.dependencies.all %}
+                            <span class="dependency" data-name="{{ dependency.name }}">{{ dependency.icon }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
         </main>
     </body>
 </html>
