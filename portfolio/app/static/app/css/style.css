@@ -31,9 +31,11 @@
 
     /*** About Page Colors ***/
     --about-section-border: 1px solid #2f2f2f;
-    --about-section-border-radius: 5px;
+    --about-section-border-radius: 10px;
     --about-article-border: 1px solid #2f2f2f;
-    --about-article-border-radius: 5px;
+    --about-article-border-radius: 10px;
+    
+    --about-general-text-color: #ffffff;
 }
 
 html {

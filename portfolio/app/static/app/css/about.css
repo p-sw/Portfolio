@@ -1,7 +1,50 @@
-main {
+a.button {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    background-color: var(--a-button-background-color);
+    text-decoration: none;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+a.button.main {
+    border: var(--a-main-button-border);
+    color: var(--a-button-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+a.button.main:hover {
+    background-color: var(--a-main-button-border-color);
+    color: var(--a-button-background-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+a.button.sub {
+    border: var(--a-sub-button-border);
+    color: var(--a-button-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+a.button.sub:hover {
+    background-color: var(--a-sub-button-border-color);
+    color: var(--a-button-background-color);
+    transition: var(--a-button-hover-transition-speed);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
 }
 
 section.box {
@@ -16,12 +59,16 @@ article.box {
 
 section.profile.box {
     margin: auto 20px;
+    padding: 50px 5%;
+
     height: fit-content;
-    width: fit-content;
+    min-height: 75vh;
+    width: 80%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 section.profile.box article.imgs {
@@ -29,27 +76,65 @@ section.profile.box article.imgs {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    margin-bottom: 10px;
+
+    min-width: fit-content;
+    min-height: fit-content;
 }
 
-section.profile.box article.imgs div.back-img{
-    background-color: var(--alt-back-color);
-    --backimg-src: attr(data-src);
-    background-image: var(--backimg-src);
-
-    width: 30vw;
-    height: 130px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-section.profile.box article.imgs div.back-img img {
+section.profile.box article.imgs img {
     background-color: var(--alt-back-color);
 
     border-radius: 50%;
     border: 5px solid var(--alt-back-color);
 
     height: 100px;
+}
+
+section.profile.box article.name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: fit-content;
+    min-height: fit-content;
+
+    color: var(--about-general-text-color);
+
+    margin-bottom: 30px;
+}
+
+section.profile.box article.name span {
+    font-size: 25px;
+}
+
+section.profile.box article.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.profile.box article.description ul {
+    color: var(--about-general-text-color);
+
+    list-style-type: disc;
+    word-break: keep-all;
+}
+
+section.profile.box article.description ul li {
+    margin: 10px 0;
+}
+
+section.profile.box article.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+    gap: 10px;
 }
