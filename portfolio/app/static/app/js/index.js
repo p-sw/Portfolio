@@ -28,10 +28,10 @@ welcome_text = {
 
     index: 0,
 
-    speed: 50,
+    speed: 30,
     special_speeds: {
-        " ": 120,
-        "\n": 160,
+        " ": 60,
+        "\n": 100,
     },
 
     start: function() {
