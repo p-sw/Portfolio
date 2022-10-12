@@ -36,6 +36,14 @@
     --about-article-border-radius: 10px;
     
     --about-general-text-color: #ffffff;
+
+    /** Projects Page Colors **/
+    --project-article-background-color: #cfcfcf;
+    --project-article-color: #000000;
+    --project-article-border: 5px solid #2f2f2f;
+    
+    --project-popup-background-color: var(--nav-popup-color);
+    --project-popup-color: var(--nav-icon-hover-color);
 }
 
 html {
