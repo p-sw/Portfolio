@@ -4,5 +4,5 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register(ProjectDependencies)
-admin.site.register(Projects)
+admin.site.register(ProjectDependency)
+admin.site.register(Project)

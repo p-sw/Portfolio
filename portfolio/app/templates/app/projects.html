@@ -24,7 +24,7 @@
                         <span class="start date">{{ project.start_commit|date:'Y-m-d' }}</span>
                         <span class="last date">{{ project.last_commit|date:'Y-m-d' }}</span>
                         <div class="dependencies">
-                            {% for dependency in project.dependencies.all %}
+                            {% for dependency in project.dependency.all %}
                             <span class="dependency" data-name="{{ dependency.name }}">{{ dependency.icon }}</span>
                             {% endfor %}
                         </div>
