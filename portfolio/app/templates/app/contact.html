@@ -3,12 +3,23 @@
 <html lang="kr">
     <head>
         {% include 'macro/head.html' %}
-        <link href="{% static 'app/css/about.css' %}" rel="stylesheet">
+        <link href="{% static 'app/css/contact.css' %}" rel="stylesheet">
     </head>
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            
+            <form action="{% url 'app:contact' %}" method="POST">
+                <header>
+                    문의하기
+                </header>
+                {% csrf_token %}
+                <div class="form-input-group">
+                    {{ form.as_div }}
+                </div>
+                <div class="form-submit-group">
+                    <button type="submit">전송</button>
+                </div>
+            </form>
         </main>
     </body>
 </html>

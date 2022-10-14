@@ -47,6 +47,19 @@
     
     --project-popup-background-color: var(--nav-popup-color);
     --project-popup-color: var(--nav-icon-hover-color);
+
+    /*** Contact Page Colors ***/
+    --contact-form-border: 1px solid #ffffff;
+    --contact-form-background-color: rgba(255, 255, 255, 0.95);
+    --contact-form-color: #000000;
+
+    --contact-form-input-primary-color: var(--highlighted-color);
+
+    --contact-form-input-border-before: 1px solid var(--contact-form-input-primary-color);
+    --contact-form-input-border-after: 4px solid var(--contact-form-input-primary-color);
+    --contact-form-input-color: var(--contact-form-input-primary-color);
+    --contact-form-input-background-before: #ffffff;
+    --contact-form-input-background-after: #ffffff;
 }
 
 html {

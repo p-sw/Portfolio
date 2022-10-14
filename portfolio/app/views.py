@@ -1,5 +1,9 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic.edit import FormView
 from .models import Project
+from .forms import ContactForm
 
 # Create your views here.
 def index(request):
@@ -14,5 +18,14 @@ def projects(request):
         "projects": all_projects
     })
 
-def contact(request):
-    return render(request, 'app/contact.html')
+def contact_success(request):
+    return HttpResponse("Thanks for contacting me!")
+
+class ContactView(FormView):
+    template_name = 'app/contact.html'
+    form_class = ContactForm
+    success_url = reverse_lazy("app:thanks")
+
+    def form_valid(self, form):
+        form.send_mail()
+        return super().form_valid(form)
