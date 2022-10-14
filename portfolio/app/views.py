@@ -19,7 +19,7 @@ def projects(request):
     })
 
 def contact_success(request):
-    return HttpResponse("Thanks for contacting me!")
+    return render(request, "app/contact-thanks.html")
 
 class ContactView(FormView):
     template_name = 'app/contact.html'
