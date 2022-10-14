@@ -26,6 +26,6 @@ class ContactView(FormView):
     form_class = ContactForm
     success_url = reverse_lazy("app:thanks")
 
-    def form_valid(self, form):
+    def form_valid(self, form: ContactForm):
         form.send_mail()
         return super().form_valid(form)
