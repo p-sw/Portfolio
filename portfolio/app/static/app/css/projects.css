@@ -1,7 +1,5 @@
-body {
-    scroll-behavior: smooth;
-
-    height: fit-content;
+body,main {
+    overflow-y: hidden;
 }
 
 main {
@@ -45,7 +43,9 @@ section.projects {
     justify-content: center;
 
     width: 100%;
-    height: fit-content;
+    height: 100vh;
+
+    overflow-y: hidden;
 }
 
 section.projects article.project {
@@ -61,10 +61,30 @@ section.projects article.project {
     color: var(--project-article-color);
 
     padding: 20px;
-    margin: calc(50vh - var(--project-article-height) / 2) 0;
 
     border: var(--project-article-border);
     border-radius: 15px;
+}
+
+section.projects article.project.up {
+    position: fixed;
+    top: calc(-50vh - var(--project-article-width) / 2);
+    left: calc(50vw - var(--project-article-width) / 2);
+    transition: 0.5s;
+}
+
+section.projects article.project.down {
+    position: fixed;
+    top: calc(150vh + var(--project-article-height) / 2);
+    left: calc(50vw - var(--project-article-width) / 2);
+    transition: 0.5s;
+}
+
+section.projects article.project.current {
+    position: fixed;
+    top: calc(50vh - var(--project-article-height) / 2);
+    left: calc(50vw - var(--project-article-width) / 2);
+    transition: 0.5s;
 }
 
 section.projects article.project header {

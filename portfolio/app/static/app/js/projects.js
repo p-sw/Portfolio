@@ -1,35 +1,25 @@
 document.addEventListener('wheel', function(e) {
-    // scroll to the center of next of .project element that has attribute data-current
-    // if the scroll is down
-    // if the scroll is up, scroll to the previous element
-    // using scrollTo
-
-    // if the scroll is down
     if (e.deltaY > 0) {
-        var current = document.querySelector('.project[data-current]');
+        var current = document.querySelector('.current.project');
         var next = current.nextElementSibling;
         if (next) {
-            next.setAttribute('data-current', true);
-            current.removeAttribute('data-current');
-            window.scrollTo({
-                top: next.offsetTop - document.querySelector('header').offsetHeight,
-                behavior: 'smooth'
-            });
+            next.classList.remove("down");
+            next.classList.add("current");
+            current.classList.remove("current");
+            current.classList.add("up");
         }
     }
-    // if the scroll is up
     else if (e.deltaY < 0) {
-        var current = document.querySelector('.project[data-current]');
+        var current = document.querySelector('.current.project');
         var previous = current.previousElementSibling;
         if (previous) {
-            previous.setAttribute('data-current', true);
-            current.removeAttribute('data-current');
-            window.scrollTo({
-                top: previous.offsetTop - document.querySelector('header').offsetHeight,
-                behavior: 'smooth'
-            });
+            previous.classList.remove("up");
+            previous.classList.add("current");
+            current.classList.remove("current");
+            current.classList.add("down");
         }
     }
 });
 
-document.querySelector('.projects').children[0].setAttribute('data-current', '');
+document.querySelector('.projects').children[0].classList.add("current");
+document.querySelector('.projects').children[0].classList.remove("down");

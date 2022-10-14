@@ -10,7 +10,7 @@
         <main>
             <section class="projects">
                 {% for project in projects %}
-                <article class="project">
+                <article class="down project">
                     <header>
                         <h2 data-hov="{% if project.finished %}완료된 프로젝트{% else %}진행중인 프로젝트{% endif %}">{{ project.title }}
                         {% if project.finished %}
