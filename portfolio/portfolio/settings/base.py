@@ -10,7 +10,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'constance.backends.database',
 ]
+
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_CONFIG = {
+    'EMAIL_HOST': ('smtp.zoho.com', 'SMTP 서버'),
+    'EMAIL_PORT': (465, 'SMTP 포트'),
+    'EMAIL_HOST_USER': ('', 'SMTP 사용자'),
+    'EMAIL_HOST_PASSWORD': ('', 'SMTP 비밀번호'),
+    'EMAIL_USE_SSL': (True, 'SSL 사용'),
+    'EMAIL_USE_TLS': (False, 'TLS 사용'),
+    'EMAIL_TO': ('', '받는 사람'),
+    
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
