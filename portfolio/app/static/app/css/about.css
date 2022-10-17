@@ -145,9 +145,11 @@ section.profile.box article.links {
 @media (max-width: 500px) {
     section.profile.box article.description ul {
         list-style-type: disc;
-        list-style-position: inside;
 
         text-align: left;
+        font-size: 15px;
+
+        margin: 0 20px;
     }
 
     section.profile.box article.description ul li {
