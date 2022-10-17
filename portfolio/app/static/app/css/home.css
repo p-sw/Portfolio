@@ -21,6 +21,7 @@ a.button {
     padding: 5px 10px;
 
     background-color: var(--a-button-background-color);
+    text-align: center;
     text-decoration: none;
     font-weight: 400;
 
@@ -87,4 +88,25 @@ nav.sub-nav {
 
     margin-top: 20px;
     gap: 10px;
+}
+
+@media (max-width: 500px) {
+    body {
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    main {
+        align-items: center;
+    }
+
+    header#welcome-title {
+        text-align: center;
+        font-size: 6vw;
+    }
+
+    a.button {
+        font-size: 3.5vw;
+    }
 }
