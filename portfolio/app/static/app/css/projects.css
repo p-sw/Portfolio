@@ -36,6 +36,10 @@ main {
     transition: 0.2s;
 }
 
+* {
+    user-select: none;
+}
+
 section.projects {
     display: flex;
     flex-direction: column;
