@@ -1,7 +1,11 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
 body,main {
     overflow-y: hidden;
-    touch-action: none;
-    -ms-touch-action: none;
 }
 
 main {
