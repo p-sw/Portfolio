@@ -1,5 +1,7 @@
 body,main {
     overflow-y: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 main {
