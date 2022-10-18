@@ -54,6 +54,9 @@ section.projects article.project {
     align-items: center;
     justify-content: center;
 
+    --project-article-width: 500px;
+    --project-article-height: 400px;
+
     width: var(--project-article-width);
     height: var(--project-article-height);
 
@@ -202,4 +205,39 @@ section.projects article.project div.metadata div.dependencies div.dependency-wr
 section.projects article.project div.metadata div.dependencies div.dependency-wrapper img {
     width: 20px;
     height: 20px;
+}
+
+@media (max-width: 600px) {
+    section.projects article.project {
+        --project-article-width: 310px;
+        --project-article-height: 290px;
+    }
+
+    section.projects article.project header {
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    section.projects article.project header h2 {
+        font-size: 1.8rem;
+    }
+
+    section.projects article.project header p {
+        font-size: 1.3rem;
+    }
+
+    section.projects article.project div.metadata {
+        gap: 5px;
+    }
+
+    section.projects article.project div.metadata div.dependencies {
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    section.projects article.project div.metadata div.dependencies img {
+        width: 40px;
+        height: 40px;
+    }
 }
