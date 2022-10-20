@@ -4,11 +4,11 @@ body,main {
 
 main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    width: calc(100% - 40px);;
+    width: 100%;
 
     padding: 0;
 }
@@ -42,7 +42,7 @@ main {
 
 section.projects {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
@@ -73,17 +73,17 @@ section.projects article.project {
     border-radius: 15px;
 }
 
-section.projects article.project.up {
+section.projects article.project.prev {
     position: fixed;
-    top: calc(-50vh - var(--project-article-width) / 2);
-    left: calc(50vw - var(--project-article-width) / 2);
+    top: calc(50vh - var(--project-article-height) / 2);
+    left: calc(-50vw - var(--project-article-width));
     transition: 0.5s;
 }
 
-section.projects article.project.down {
+section.projects article.project.next {
     position: fixed;
-    top: calc(150vh + var(--project-article-height) / 2);
-    left: calc(50vw - var(--project-article-width) / 2);
+    top: calc(50vh - var(--project-article-height) / 2);
+    left: calc(150vw + var(--project-article-width));
     transition: 0.5s;
 }
 
@@ -211,7 +211,71 @@ section.projects article.project div.metadata div.dependencies div.dependency-wr
     height: 20px;
 }
 
+
+.center {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    width: 100px;
+
+    --animation-duration: 1s;
+}
+
+.center img.a {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation-name: slowBlink;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-duration: var(--animation-duration);
+}
+
+.center img.b {
+    position: absolute;
+    top: 0;
+    left: 15px;
+
+    animation-name: slowBlink;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-duration: var(--animation-duration);
+}
+
+.center img.c {
+    position: absolute;
+    top: 0;
+    left: 30px;
+
+    animation-name: slowBlink;
+    animation-delay: 0.4s;
+    animation-iteration-count: infinite;
+    animation-duration: var(--animation-duration);
+}
+
+@keyframes slowBlink {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.2;
+    }
+
+    50%, 100% {
+        opacity: 1;
+    }
+}
+
+
 @media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+
     section.projects article.project {
         --project-article-width: 310px;
         --project-article-height: 290px;

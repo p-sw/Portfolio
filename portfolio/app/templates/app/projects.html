@@ -10,7 +10,7 @@
         <main>
             <section class="projects">
                 {% for project in projects %}
-                <article class="down project">
+                <article class="next project">
                     <header>
                         <h2 data-hov="{% if project.finished %}완료된 프로젝트{% else %}진행중인 프로젝트{% endif %}">{{ project.title }}
                         {% if project.finished %}
@@ -50,6 +50,11 @@
                 </article>
                 {% endfor %}
             </section>
+            <div class="center">
+                <img class="a" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
+                <img class="b" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
+                <img class="c" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
+            </div>
             <script src="{% static 'app/js/projects.js' %}"></script>
         </main>
     </body>
