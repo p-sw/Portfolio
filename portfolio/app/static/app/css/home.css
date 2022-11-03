@@ -99,6 +99,7 @@ nav.sub-nav {
 
     main {
         align-items: center;
+        padding-left: 0;
     }
 
     header#welcome-title {
