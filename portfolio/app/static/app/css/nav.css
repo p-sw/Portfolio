@@ -27,6 +27,24 @@
     justify-content: center;
 }
 
+@keyframes popFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes popFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .main-nav .wrapper a {
     background-color: transparent;
 
@@ -40,6 +58,34 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    transform: translateX(-110%);
+
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-name: popFromLeft;
+    animation-play-state: paused;
+
+    transition: 0.5s;
+}
+
+.main-nav .wrapper a[data-title="Home"] {
+    animation-delay: var(--nav-animation-initial-delay);
+    animation-play-state: running;
+}
+.main-nav .wrapper a[data-title="About"] {
+    animation-delay: calc(var(--nav-animation-initial-delay) + var(--nav-animation-nth-delay));
+    animation-play-state: running;
+}
+.main-nav .wrapper a[data-title="Projects"] {
+    animation-delay: calc(var(--nav-animation-initial-delay) + (var(--nav-animation-nth-delay) * 2));
+    animation-play-state: running;
+}
+.main-nav .wrapper a[data-title="Contact"] {
+    animation-delay: calc(var(--nav-animation-initial-delay) + (var(--nav-animation-nth-delay) * 3));
+    animation-play-state: running;
 }
 
 .main-nav .wrapper a::after {
@@ -50,9 +96,9 @@
 
     background-color: var(--nav-popup-color);
     color: var(--nav-icon-hover-color);
-    font-family: 'Pretendard Std Variable';
+    font-family: 'Pretendard Std Variable', sans-serif;
 
-    border: 1px solid var(--nav-icon-hover-color);
+    border: none;
     border-radius: 5px;
 
     padding: 5px 10px;
@@ -70,10 +116,14 @@
     width: 80%;
     
     fill: var(--nav-icon-color);
+
+    transition: 0.15s;
 }
 
 .main-nav .wrapper a svg:hover {
     fill: var(--nav-icon-hover-color);
+
+    transition: 0.15s;
 }
 
 @media (max-width: 500px) {
@@ -92,6 +142,11 @@
         flex-direction: row;
 
         justify-content: space-evenly;
+    }
+
+    .main-nav .wrapper a {
+        transform: translateY(-110%);
+        animation-name: popFromTop;
     }
 
     .main-nav .wrapper a::after {

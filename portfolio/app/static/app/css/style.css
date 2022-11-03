@@ -21,10 +21,13 @@
 
     /*** Nav Colors ***/
     --nav-container-bg-color: var(--background-color);
-    --nav-bg-color: #0f0f0f;
+    --nav-bg-color: transparent;
     --nav-icon-color: #2f2f2f;
-    --nav-icon-hover-color: var(--highlighted-color);
+    --nav-icon-hover-color: #ffffff;
     --nav-popup-color: #1f1f1f;
+
+    --nav-animation-initial-delay: 0.3s;
+    --nav-animation-nth-delay: 0.2s;
 
     /*** Index Page Colors ***/
     --index-welcome-title-color: #ffffff;

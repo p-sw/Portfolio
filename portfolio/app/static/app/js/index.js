@@ -35,6 +35,7 @@ welcome_text = {
     },
 
     start: function() {
+        let current_char;
         if (this.index <= this.max_index) {
             this.object.innerText = Hangul.assemble(this.get_flat().slice(undefined, this.index));
             this.index++;

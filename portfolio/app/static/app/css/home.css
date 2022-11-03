@@ -7,7 +7,7 @@ main {
 header#welcome-title {
     color: var(--index-welcome-title-color);
 
-    font-family: 'Pretendard Std Variable';
+    font-family: 'Pretendard Std Variable', sans-serif;
     font-size: 3.5vw;
 }
 
