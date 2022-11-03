@@ -6,3 +6,5 @@ media/
 *.sqlite3-journal
 *.db
 *.db-journal
+
+.idea
