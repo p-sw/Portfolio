@@ -14,7 +14,7 @@ main {
     width: fit-content;
     height: fit-content;
 
-    font-family: 'Pretendard Std Variable';
+    font-family: 'Pretendard Std Variable', sans-serif;
     font-size: 15px;
     font-weight: 400;
 
