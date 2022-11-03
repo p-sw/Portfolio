@@ -127,10 +127,6 @@
 }
 
 @media (max-width: 500px) {
-    body {
-        flex-direction: row;
-    }
-
     .main-nav {
         flex-direction: row;
 
@@ -152,9 +148,5 @@
     .main-nav .wrapper a::after {
         left: auto;
         top: 60px;
-    }
-
-    main {
-        padding: 0 15px;
     }
 }

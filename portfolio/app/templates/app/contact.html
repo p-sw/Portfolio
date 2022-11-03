@@ -7,11 +7,12 @@
     </head>
     <body>
         {% include 'macro/nav.html' %}
+        <header>
+            <h1>문의하기</h1>
+            <div><span>개인적인 문의사항, </span> <span>프로그래밍 관련 질문, </span> <span>웹사이트 외주까지.</span></div>
+        </header>
         <main>
             <form action="{% url 'app:contact' %}" method="POST">
-                <header>
-                    문의하기
-                </header>
                 {% csrf_token %}
                 <div class="form-input-group">
                     {{ form.as_div }}
