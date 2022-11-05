@@ -22,3 +22,13 @@ class Project(models.Model):
             "strike"
         ])
         super(Project, self).save(*args, **kwargs)
+    
+    def as_dictionary(self):
+        return {
+            "href": self.href,
+            "title": self.title,
+            "short_description": self.short_description,
+            "content": self.content_as_markdown,
+            "start_commit": self.start_commit.strftime("%Y-%m-%d"),
+            "last_commit": self.last_commit.strftime("%Y-%m-%d")
+        }

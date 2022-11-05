@@ -1,0 +1,9 @@
+body {
+    flex-direction: row;
+}
+
+@media (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+}
