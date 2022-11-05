@@ -1,9 +1,92 @@
 body {
     flex-direction: row;
+
+    /* for test */
+    height: 150vh;
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+@keyframes slideToTop {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+section.project-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 20%;
+
+    position: sticky;
+    top: 50px;
+
+    animation: slideToTop 1s ease-in-out;
+}
+
+section.project-navigation ul {
+    width: 100%;
+    
+    color: #fff;
+    
+    border: none;
+    border-radius: 5px;
+    background-color: #2f2f2f;
+
+    padding: 15px;
+
+    list-style-position: inside;
+}
+
+section.project-navigation ul li {
+    width: 100%;
+
+    list-style-type: circle;
+
+    word-break: keep-all;
+}
+
+section.project-navigation ul li.in-view {
+    list-style-type: disc;
+}
+
+section.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 80%;
+
+    margin-left: 20px;
+}
+
+
 
 @media (max-width: 500px) {
     body {
+        flex-direction: column;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    main {
         flex-direction: column;
     }
 }

@@ -9,11 +9,11 @@
         {% include 'macro/nav.html' %}
         <main>
             <section class="project-navigation">
-                <ol>
+                <ul>
                     {% for project in projects %}
                     <li data-href="{{ project.href }}" class="blank">{{ project.title }}</li>
                     {% endfor %}
-                </ol>
+                </ul>
             </section>
             <section class="projects">
             </section>
