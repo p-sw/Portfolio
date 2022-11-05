@@ -1,6 +1,4 @@
 .main-nav {
-    z-index: 2;
-
     background-color: var(--nav-container-bg-color);
 
     display: flex;
@@ -8,9 +6,8 @@
     justify-content: center;
     align-items: center;
 
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
 
     width: 40px;
     height: 100%;

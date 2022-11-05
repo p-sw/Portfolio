@@ -143,6 +143,10 @@ section.profile.box article.links {
 }
 
 @media (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+
     main {
         padding-left: 0;
     }
