@@ -1,12 +1,12 @@
 view_handler = new IntersectionObserver(function(entries, observer) {
     entries.forEach(function(entry) {
-        if (entry.intersectionRatio > 0) {
+        if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
-            document.querySelector(`section.project-navigation ol li[data-href="${entry.target.id}"]`).classList.add('in-view');
+            document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.add('in-view');
         }
-        if (entry.intersectionRatio <= 0) {
+        if (!entry.isIntersecting) {
             entry.target.classList.remove('in-view');
-            document.querySelector(`section.project-navigation ol li[data-href="${entry.target.id}"]`).classList.remove('in-view');
+            document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.remove('in-view');
         }
     });
 })
@@ -26,18 +26,18 @@ class ProjectManager {
     init() {
         this.projectList.then(projects => {
             for (let href of projects) {
-                this.addProject(href);
+                this.addProject(href, projects.indexOf(href));
             }
         })
     }
 
-    addProject(href) {
-        let project = Project.init(href, this.projectContainer);
+    addProject(href, index) {
+        let project = Project.init(href, this.projectContainer, index);
     }
 }
 
 Project = {
-    init: function(href, container) {
+    init: function(href, container, index) {
         fetch(`/projects/${href}`, {
             method: "GET",
         }).then((res) => {
@@ -49,15 +49,15 @@ Project = {
             this.content = data.content;
             this.start_commit = data.start_commit;
             this.last_commit = data.last_commit;
-            return data.href;
-        }).then((href) => {
-            this.setupNode(container);
+        }).then(() => {
+            this.setupNode(container, index);
         })
     },
 
-    setupNode: function(container) {
+    setupNode: function(container, index) {
         let node = document.createElement("article");
         node.id = this.href;
+        node.style.order = index;
         node.innerHTML = `
             <div class="project-header">
                 <h2>${this.title}</h2>
