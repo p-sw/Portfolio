@@ -8,53 +8,16 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            <section class="projects">
-                {% for project in projects %}
-                <article class="next project">
-                    <header>
-                        <h2 data-hov="{% if project.finished %}완료된 프로젝트{% else %}진행중인 프로젝트{% endif %}">{{ project.title }}
-                        {% if project.finished %}
-                        <img src="{% static 'app/img/project_finished.png' %}">
-                        {% else %}
-                        <img src="{% static 'app/img/project_not_finished.png' %}">
-                        {% endif %}</h2>
-                        <p>{{ project.short_description }}</p>
-                    </header>
-                    <div class="metadata">
-                        <div class="hover-wrapper">
-                            <span class="date" data-hov="최초 커밋">
-                                <img src="{% static 'app/img/play.png' %}">
-                                {{ project.start_commit|date:'Y-m-d' }}
-                            </span>
-                        </div>
-                        <div class="hover-wrapper">
-                            <span class="date" data-hov="최종 커밋">
-                                <img src="{% static 'app/img/pause.png' %}">
-                                {{ project.last_commit|date:'Y-m-d' }}
-                            </span>
-                        </div>
-                        <div class="hover-wrapper">
-                            <div class="dependencies" data-hov="종속성">
-                                <img src="{% static 'app/img/dependency.png' %}">
-
-                                <div class="dependency-wrapper">
-                                    {% for dependency in project.dependencies.all %}
-                                    <span class="dependency" data-name="{{ dependency.name }}">
-                                        <img src="media/{{ dependency.icon }}">
-                                    </span>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                {% endfor %}
+            <section class="project-navigation">
+                <ol>
+                    {% for project in projects %}
+                    <li data-href="{{ project.href }}" class="blank">{{ project.title }}</li>
+                    {% endfor %}
+                </ol>
             </section>
-            <div class="center">
-                <img class="a" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
-                <img class="b" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
-                <img class="c" src="https://img.icons8.com/material-rounded/48/ffffff/more-than.png"/>
-            </div>
+            <section class="projects">
+                
+            </section>
             <script src="{% static 'app/js/projects.js' %}"></script>
         </main>
     </body>
