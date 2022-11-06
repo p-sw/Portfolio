@@ -8,19 +8,16 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            <section class="project-navigation">
-                <ul>
-                    {% for project in projects %}
-                    <li data-href="{{ project.href }}" class="blank">{{ project.title }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
             <section class="projects">
             </section>
             <script src="{% static 'app/js/projects.js' %}"></script>
             <script>
                 const pm = new ProjectManager();
             </script>
+            <section class="project-navigation">
+                <ul>
+                </ul>
+            </section>
         </main>
     </body>
 </html>

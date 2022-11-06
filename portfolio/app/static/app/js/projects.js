@@ -32,13 +32,20 @@ class ProjectManager {
     }
 
     addProject(href, index) {
-        let project = Project.init(href, this.projectContainer, index);
+        let project = new Project(href, this.projectContainer, index);
+        project.init();
     }
 }
 
-Project = {
-    init: function(href, container, index) {
-        fetch(`/projects/${href}`, {
+class Project {
+    constructor (href, container, index) {
+        this.index = index;
+        this.container = container;
+        this.href = href;
+        this.indexNavigator = document.querySelector("section.project-navigation ul");
+    }
+    init () {
+        fetch(`/projects/${this.href}`, {
             method: "GET",
         }).then((res) => {
             return res.json()
@@ -50,14 +57,14 @@ Project = {
             this.start_commit = data.start_commit;
             this.last_commit = data.last_commit;
         }).then(() => {
-            this.setupNode(container, index);
+            this.setupNode();
         })
-    },
+    }
 
-    setupNode: function(container, index) {
+    setupNode () {
         let node = document.createElement("article");
         node.id = this.href;
-        node.style.order = index;
+        node.style.order = this.index;
         node.innerHTML = `
             <div class="project-header">
                 <h2>${this.title}</h2>
@@ -68,11 +75,23 @@ Project = {
                 ${this.content}
             </div>
         `;
-        container.appendChild(node);
+        this.container.appendChild(node);
         this.startObserve(node);
-    },
+        this.addToIndexNavigator();
+    }
 
-    startObserve: function(node) {
+    startObserve (node) {
         view_handler.observe(node);
+    }
+
+    addToIndexNavigator () {
+        let node = document.createElement("li");
+        node.dataset.href = this.href;
+        node.style.order = this.index;
+        node.innerText = this.title;
+        node.onclick = function(e) {
+            document.querySelector(`#${e.target.dataset.href}`).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+        }
+        this.indexNavigator.appendChild(node);
     }
 }

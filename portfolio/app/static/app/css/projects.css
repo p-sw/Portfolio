@@ -1,8 +1,9 @@
 body {
     flex-direction: row;
 
-    /* for test */
-    height: 150vh;
+    height: fit-content;
+
+    font-family: "Pretendard Std Variable", sans-serif;
 }
 
 main {
@@ -30,7 +31,9 @@ section.project-navigation {
     justify-content: flex-start;
     align-items: flex-start;
 
-    width: 20%;
+    min-width: 20%;
+    width: fit-content;
+    max-width: 40%;
 
     position: sticky;
     top: 50px;
@@ -40,16 +43,21 @@ section.project-navigation {
 
 section.project-navigation ul {
     width: 100%;
-    
+
     color: #fff;
     
     border: none;
     border-radius: 5px;
-    background-color: #2f2f2f;
 
     padding: 15px;
 
     list-style-position: inside;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-weight: 600;
 }
 
 section.project-navigation ul li {
@@ -58,6 +66,8 @@ section.project-navigation ul li {
     list-style-type: circle;
 
     word-break: keep-all;
+
+    cursor: pointer;
 }
 
 section.project-navigation ul li.in-view {
@@ -70,10 +80,141 @@ section.projects {
     justify-content: flex-start;
     align-items: flex-start;
 
-    width: 80%;
+    width: calc(60% - 5vw);
 
-    margin-left: 20px;
+    margin: 40px 20px 0;
+    padding-right: 20px;
+    gap: 35px;
+
+    border-right: 5px solid #aaaaaa;
 }
+
+section.projects article:not(.in-view) {
+    opacity: 0;
+
+    transition: 1s;
+}
+
+section.projects article.in-view {
+    opacity: 1;
+
+    transition: 1s;
+}
+
+section.projects article {
+    color: #cccccc;
+
+    padding-bottom: 25px;
+    border-bottom: 3px solid #aaaaaa;
+    border-bottom-right-radius: 10px;
+}
+
+section.projects article div.project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-bottom: 20px;
+}
+
+section.projects article div.project-header h2 {
+    font-size: 50px;
+}
+
+section.projects article div.project-header h3 {
+    font-size: 30px;
+}
+
+section.projects article div.project-header p {
+    font-size: 20px;
+}
+
+section.projects article div.project-content {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+section.projects article div.project-content h1 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+section.projects article div.project-content h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+section.projects article div.project-content h3 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+section.projects article div.project-content h4 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+section.projects article div.project-content h5 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+section.projects article div.project-content h6 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+section.projects article div.project-content a {
+    color: #00ccff;
+    text-decoration: underline;
+
+    transition: 0.2s;
+}
+
+section.projects article div.project-content a:hover {
+    color: #0088ff;
+
+    transition: 0.2s;
+}
+
+section.projects article div.project-content hr {
+    width: 65%;
+    height: 1px;
+
+    margin: 10px 0;
+}
+
+section.projects article div.project-content ul {
+    list-style-position: inside;
+    list-style-type: circle;
+}
+
+section.projects article div.project-content ul ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section.projects article div.project-content ul ul ul {
+    list-style-type: square;
+}
+
+section.projects article div.project-content ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+section.projects article div.project-content ol ol {
+    padding-left: 20px;
+}
+
+section.projects article div.project-content strong {
+    font-weight: 800;
+}
+
+section.projects article div.project-content em {
+    font-style: italic;
+}
+
 
 
 
