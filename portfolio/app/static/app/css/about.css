@@ -70,7 +70,7 @@ section.profile.box {
     align-items: center;
     justify-content: center;
 
-    background-image: linear-gradient(0.4turn, #202020, #151515);
+    background-image: linear-gradient(0.4turn, #303030, #151515);
 }
 
 section.profile.box article.imgs {
