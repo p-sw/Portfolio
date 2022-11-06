@@ -16,14 +16,8 @@ sub_nav = {
 welcome_text = {
     object: document.getElementById("welcome-title"),
 
-    text: "안녕하세요. \n웹 개발자 서브입니다.",
-
-    get_flat: function() {
-        return [].concat(...Hangul.disassemble(this.text));
-    },
-
-    get_index: function() {
-        this.max_index = this.get_flat().length;
+    get_flat: function(text) {
+        return [].concat(...Hangul.disassemble(text));
     },
 
     index: 0,
@@ -34,19 +28,20 @@ welcome_text = {
         "\n": 100,
     },
 
-    start: function() {
+    start: function(text) {
+        let max_index = this.get_flat(text).length;
         let current_char;
-        if (this.index <= this.max_index) {
-            this.object.innerText = Hangul.assemble(this.get_flat().slice(undefined, this.index));
+        if (this.index <= max_index) {
+            this.object.innerText = Hangul.assemble(this.get_flat(text).slice(undefined, this.index));
             this.index++;
-            current_char = this.get_flat()[this.index - 1];
+            current_char = this.get_flat(text)[this.index - 1];
             if ("\n" === current_char) {
                 this.object.innerHTML += "<br>";
             }
             if (current_char in this.special_speeds) {
-                setTimeout(this.start.bind(this), this.special_speeds[current_char])
+                setTimeout(this.start.bind(this, text), this.special_speeds[current_char])
             } else {
-                setTimeout(this.start.bind(this), this.speed);
+                setTimeout(this.start.bind(this, text), this.speed);
             }
         } else {
             sub_nav.buttons_visible();

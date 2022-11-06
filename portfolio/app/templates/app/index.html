@@ -1,4 +1,5 @@
 {% load static %}
+{% load safe_newline %}
 <!DOCTYPE html>
 <html lang="kr">
     <head>
@@ -9,22 +10,23 @@
     <body>
         {% include 'macro/nav.html' %}
         <main>
-            <header id="welcome-title"></header>
-            <nav class="sub-nav">
-                <a class="main button" href="https://github.com/sserve-kr">
-                    <img class="icon" src="{% static 'app/img/github.png' %}">
-                    깃허브 둘러보기
-                </a>
-                <a class="sub button">
-                    <img class="icon" src="{% static 'app/img/blog.png' %}">
-                    블로그 바로가기
-                </a>
-            </nav>
+            <section class="main-box">
+                <header id="welcome-title"></header>
+                <nav class="sub-nav">
+                    <a class="main button" href="https://github.com/sserve-kr">
+                        <img class="icon" src="{% static 'app/img/github.png' %}">
+                        깃허브 둘러 보기
+                    </a>
+                    <a class="sub button">
+                        <img class="icon" src="{% static 'app/img/blog.png' %}">
+                        블로그 바로 가기
+                    </a>
+                </nav>
+            </section>
         </main>
         <script src="{% static 'app/js/index.js' %}"></script>
         <script>
-            welcome_text.get_index();
-            welcome_text.start();
+            welcome_text.start("{{ config.WELCOME_TEXT|safe_newline }}");
         </script>
     </body>
 </html>
