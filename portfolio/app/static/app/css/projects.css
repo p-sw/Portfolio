@@ -15,6 +15,11 @@ main {
     width: 100%;
 }
 
+img.loading {
+    width: 10vw;
+    height: 10vw;
+}
+
 @keyframes slideToTop {
     0% {
         transform: translateY(-200%);
@@ -78,7 +83,7 @@ section.projects {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 
     width: calc(60% - 5vw);
 
@@ -224,10 +229,26 @@ section.projects article div.project-content em {
     }
 
     section {
-        width: 100%;
+        width: 100% !important;
     }
 
     main {
         flex-direction: column;
+    }
+
+    section.projects {
+        margin-left: 0;
+        border: none;
+
+        padding: 0 10px;
+
+        order: 1;
+    }
+
+    section.project-navigation {
+        position: relative;
+        top: 0;
+
+        order: 0;
     }
 }

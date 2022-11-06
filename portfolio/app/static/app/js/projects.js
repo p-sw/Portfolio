@@ -43,6 +43,9 @@ class ProjectManager {
         this.projectList.then(projects => {
             for (let href of projects) {
                 this.addProject(href, projects.indexOf(href));
+                if (document.querySelector("img.loading")) {
+                    document.querySelector("img.loading").remove();
+                }
             }
         })
     }
