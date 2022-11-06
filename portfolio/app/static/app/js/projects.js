@@ -1,14 +1,30 @@
+function buildThreshold(base, step, max) {
+    let threshold = [base];
+
+    for (let i=0;i<=max/step;i++) {
+        threshold.push(base+i*step);
+        threshold.push(base-i*step);
+    }
+
+    return threshold;
+}
+
 view_handler = new IntersectionObserver(function(entries, observer) {
     entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
-            document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.add('in-view');
-        }
-        if (!entry.isIntersecting) {
+            if (entry.intersectionRatio >= 0.5) {
+                document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.add('in-view');
+            }
+        } else {
             entry.target.classList.remove('in-view');
-            document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.remove('in-view');
+            if (entry.intersectionRatio < 0.5) {
+                document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.remove('in-view');
+            }
         }
     });
+}, {
+    threshold: buildThreshold(0.5, 0.01, 0.2)
 })
 
 class ProjectManager {
