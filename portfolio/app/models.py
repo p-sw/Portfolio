@@ -7,8 +7,8 @@ class Project(models.Model):
     short_description = models.CharField(max_length=100)
     start_commit = models.DateField()
     last_commit = models.DateField()
-    git_url = models.URLField(null=True)
-    live_url = models.URLField(null=True)
+    git_url = models.URLField(null=True, blank=True)
+    live_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
