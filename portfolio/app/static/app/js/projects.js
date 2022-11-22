@@ -16,11 +16,6 @@ view_handler = new IntersectionObserver(function(entries, observer) {
             if (entry.intersectionRatio >= 0.5) {
                 document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.add('in-view');
             }
-        } else {
-            entry.target.classList.remove('in-view');
-            if (entry.intersectionRatio < 0.5) {
-                document.querySelector(`section.project-navigation ul li[data-href="${entry.target.id}"]`).classList.remove('in-view');
-            }
         }
     });
 }, {
