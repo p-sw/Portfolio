@@ -1,17 +1,18 @@
-FROM python:3.10.7
+FROM python:3.11.0
 
 ENV PYTHONUNBUFFERED=1
 ENV DJANGO_SETTINGS_MODULE=portfolio.settings.prod
 
 WORKDIR /app
 
-COPY requirements.txt /app
+COPY Pipfile Pipfile.lock /app/
+RUN pip install setuptools wheel pipenv
+RUN pipenv install --system --deploy
 
-RUN pip install -r requirements.txt
+COPY . /app/
 
-COPY ./portfolio /app/
-COPY docker-entrypoint.sh /app
+RUN python manage.py collectstatic --noinput
 
-RUN chmod +x /app/docker-entrypoint.sh
+CMD ["./docker-entrypoint.sh"]
 
 EXPOSE 5000
