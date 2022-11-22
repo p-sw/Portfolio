@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -75,10 +76,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
+DATABASE_LOCATION = path.join(BASE_DIR, 'db', 'db.sqlite3')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_LOCATION,
     }
 }
 
@@ -99,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
