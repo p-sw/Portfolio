@@ -164,5 +164,7 @@ section.projects article div.project-header p {
         top: 0;
 
         order: 0;
+
+        max-width: 100%;
     }
 }
