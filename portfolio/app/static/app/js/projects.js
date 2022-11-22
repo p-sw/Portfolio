@@ -69,6 +69,8 @@ class Project {
             this.short_description = data.short_description;
             this.start_commit = data.start_commit;
             this.last_commit = data.last_commit;
+            this.git_url = data.git_url;
+            this.live_url = data.live_url;
         }).then(() => {
             this.setupNode();
         })
@@ -85,6 +87,24 @@ class Project {
                 <p>${this.start_commit} ~ ${this.last_commit}</p>
             </div>
         `;
+        let projectLinks = document.createElement("div");
+        projectLinks.classList.add("project-links");
+        if (this.git_url) {
+            let gitLink = document.createElement("a");
+            gitLink.href = this.git_url;
+            gitLink.target = "_blank";
+            gitLink.appendChild(document.querySelector("div#image-source img[alt='github']").cloneNode(true));
+            projectLinks.appendChild(gitLink);
+        }
+        if (this.live_url) {
+            let liveLink = document.createElement("a");
+            liveLink.href = this.live_url;
+            liveLink.target = "_blank";
+            liveLink.appendChild(document.querySelector("div#image-source img[alt='live']").cloneNode(true));
+            projectLinks.appendChild(liveLink);
+        }
+        node.appendChild(projectLinks);
+
         this.container.appendChild(node);
         this.startObserve(node);
         this.addToIndexNavigator();

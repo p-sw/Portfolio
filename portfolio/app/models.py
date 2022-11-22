@@ -19,5 +19,7 @@ class Project(models.Model):
             "title": self.title,
             "short_description": self.short_description,
             "start_commit": self.start_commit.strftime("%Y-%m-%d"),
-            "last_commit": self.last_commit.strftime("%Y-%m-%d")
+            "last_commit": self.last_commit.strftime("%Y-%m-%d"),
+            "git_url": self.git_url,
+            "live_url": self.live_url,
         }

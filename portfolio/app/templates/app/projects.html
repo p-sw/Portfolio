@@ -6,6 +6,10 @@
         <link href="{% static 'app/css/projects.css' %}" rel="stylesheet">
     </head>
     <body>
+        <div style="display: none;" id="image-source">
+            <img src="{% static 'app/img/github.svg' %}" alt="github">
+            <img src="{% static 'app/img/live.svg' %}" alt="live">
+        </div>
         {% include 'macro/nav.html' %}
         <main>
             <section class="projects">
