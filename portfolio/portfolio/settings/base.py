@@ -24,7 +24,24 @@ CONSTANCE_CONFIG = {
     'EMAIL_USE_SSL': (True, 'SSL 사용'),
     'EMAIL_USE_TLS': (False, 'TLS 사용'),
     'EMAIL_TO': ('', '받는 사람'),
-    
+
+    'WELCOME_TEXT': ('안녕하세요.\n웹 개발자 서브입니다.', '메인 페이지 인사말 (타이핑 효과)'),
+}
+
+CONSTANCE_CONFIG_FIELDSETS = {
+    "Contact Page Configurations": (
+        'EMAIL_HOST',
+        'EMAIL_PORT',
+        'EMAIL_HOST_USER',
+        'EMAIL_HOST_PASSWORD',
+        'EMAIL_USE_SSL',
+        'EMAIL_USE_TLS',
+        'EMAIL_TO'
+    ),
+
+    'Index Page Configurations': (
+        'WELCOME_TEXT',
+    )
 }
 
 MIDDLEWARE = [
@@ -46,6 +63,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'constance.context_processors.config',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

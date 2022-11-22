@@ -2,6 +2,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    padding-left: 100px;
 }
 
 header#welcome-title {

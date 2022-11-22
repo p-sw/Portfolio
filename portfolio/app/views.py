@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
@@ -17,6 +17,14 @@ def projects(request):
     return render(request, 'app/projects.html', {
         "projects": all_projects
     })
+
+def get_project(request, project_id):
+    project = Project.objects.get(href=project_id)
+    return JsonResponse(project.as_dictionary())
+
+def get_project_list(request):
+    all_projects = Project.objects.all().order_by('start_commit')
+    return JsonResponse([project.href for project in all_projects], safe=False)
 
 def contact_success(request):
     return render(request, "app/contact-thanks.html")
