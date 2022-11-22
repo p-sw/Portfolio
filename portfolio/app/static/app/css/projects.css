@@ -112,6 +112,8 @@ section.projects article {
     padding-bottom: 25px;
     border-bottom: 3px solid #aaaaaa;
     border-bottom-right-radius: 10px;
+
+    width: 100%;
 }
 
 section.projects article div.project-header {
@@ -133,94 +135,6 @@ section.projects article div.project-header h3 {
 section.projects article div.project-header p {
     font-size: 20px;
 }
-
-section.projects article div.project-content {
-    font-size: 15px;
-    font-weight: 400;
-}
-
-section.projects article div.project-content h1 {
-    font-size: 30px;
-    font-weight: 500;
-}
-
-section.projects article div.project-content h2 {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-section.projects article div.project-content h3 {
-    font-size: 26px;
-    font-weight: 500;
-}
-
-section.projects article div.project-content h4 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
-section.projects article div.project-content h5 {
-    font-size: 22px;
-    font-weight: 500;
-}
-
-section.projects article div.project-content h6 {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-section.projects article div.project-content a {
-    color: #00ccff;
-    text-decoration: underline;
-
-    transition: 0.2s;
-}
-
-section.projects article div.project-content a:hover {
-    color: #0088ff;
-
-    transition: 0.2s;
-}
-
-section.projects article div.project-content hr {
-    width: 65%;
-    height: 1px;
-
-    margin: 10px 0;
-}
-
-section.projects article div.project-content ul {
-    list-style-position: inside;
-    list-style-type: circle;
-}
-
-section.projects article div.project-content ul ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-section.projects article div.project-content ul ul ul {
-    list-style-type: square;
-}
-
-section.projects article div.project-content ol {
-    list-style-position: inside;
-    list-style-type: decimal;
-}
-
-section.projects article div.project-content ol ol {
-    padding-left: 20px;
-}
-
-section.projects article div.project-content strong {
-    font-weight: 800;
-}
-
-section.projects article div.project-content em {
-    font-style: italic;
-}
-
-
 
 
 @media (max-width: 500px) {

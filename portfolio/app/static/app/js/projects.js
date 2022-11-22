@@ -72,7 +72,6 @@ class Project {
             this.href = data.href;
             this.title = data.title;
             this.short_description = data.short_description;
-            this.content = data.content;
             this.start_commit = data.start_commit;
             this.last_commit = data.last_commit;
         }).then(() => {
@@ -89,9 +88,6 @@ class Project {
                 <h2>${this.title}</h2>
                 <h3>${this.short_description}</h3>
                 <p>${this.start_commit} ~ ${this.last_commit}</p>
-            </div>
-            <div class="project-content">
-                ${this.content}
             </div>
         `;
         this.container.appendChild(node);
