@@ -9,10 +9,9 @@ COPY Pipfile Pipfile.lock /app/
 RUN pip install setuptools wheel pipenv
 RUN pipenv install --system --deploy
 
-COPY . /app/
+COPY docker-entrypoint.sh /app
+COPY ./portfolio/ /app/
 
-RUN python manage.py collectstatic --noinput
+RUN ["chmod", "+x", "./docker-entrypoint.sh"]
 
 CMD ["./docker-entrypoint.sh"]
-
-EXPOSE 5000
