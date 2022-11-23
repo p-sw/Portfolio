@@ -43,6 +43,8 @@ section.project-navigation {
     position: sticky;
     top: 50px;
 
+    border-left: 5px solid #fff;
+
     animation: slideToTop 1s ease-in-out;
 }
 
@@ -90,8 +92,6 @@ section.projects {
     margin: 40px 20px 0;
     padding-right: 20px;
     gap: 35px;
-
-    border-right: 5px solid #aaaaaa;
 }
 
 section.projects article:not(.in-view) {
@@ -110,8 +110,7 @@ section.projects article {
     color: #cccccc;
 
     padding-bottom: 25px;
-    border-bottom: 3px solid #aaaaaa;
-    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid #aaaaaa;
 
     width: 100%;
 }
