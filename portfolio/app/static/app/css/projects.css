@@ -126,14 +126,37 @@ section.projects article div.project-header {
 
 section.projects article div.project-header h2 {
     font-size: 50px;
+    font-weight: 1000;
 }
 
 section.projects article div.project-header h3 {
     font-size: 30px;
+    font-weight: 500;
 }
 
 section.projects article div.project-header p {
     font-size: 20px;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 1000px) {
+    section.projects article div.project-header h2 {
+        font-size: 40px;
+    }
+
+    section.projects article div.project-header h3 {
+        font-size: 25px;
+    }
+
+    section.projects article div.project-header p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section.projects article div.project-header h2 {
+        font-size: 35px;
+    }
 }
 
 section.projects article div.project-links {
